@@ -12,6 +12,7 @@ const Nav = () => {
         </Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
+      <li><Link to="/State">Hooks</Link></li>
       </nav>
     </header>
   );

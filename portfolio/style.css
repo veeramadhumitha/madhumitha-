@@ -1,0 +1,51 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Poppins, sans-serif; }
+
+body {
+  background: linear-gradient(120deg, #3a6073, #16222a);
+  color: white;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px; position: sticky; top: 0; background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+nav ul { display: flex; gap: 20px; list-style: none; }
+nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+
+.hero { padding: 120px 20px; animation: fade 1.5s; }
+.hero-img {
+  width: 160px; height: 160px; border-radius: 50%; border: 3px solid white;
+  margin-bottom: 20px; object-fit: cover;
+}
+
+.btn {
+  padding: 10px 25px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.glass-card {
+  margin: 60px auto; width: 85%; max-width: 900px; padding: 40px;
+  background: rgba(255,255,255,0.1); border-radius: 15px;
+  backdrop-filter: blur(10px); animation: fade 1.5s;
+}
+
+.skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px; }
+.skills li { background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; }
+
+.project-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.project-card {
+  background: rgba(255,255,255,0.15);
+  padding: 20px; border-radius: 12px; transition: 0.3s;
+}
+.project-card:hover { transform: scale(1.05); }
+
+footer { padding: 20px; margin-top: 30px; background: rgba(0,0,0,0.4); }
+@keyframes fade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
