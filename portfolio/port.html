@@ -1,234 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Veeramadhumitha P — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --accent:#8b5cf6;
-      --accent-2:#06b6d4;
-      --bg-1: #fffafc;
-      --bg-2: #f6fbff;
-      --muted: #586069;
-      --card-bg: rgba(255,255,255,0.75);
-      --glass-border: rgba(139,92,246,0.12);
-      --radius:18px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:"Outfit",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background: linear-gradient(135deg,var(--bg-1),var(--bg-2));
-      color:#0b1220;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:28px;
-      display:flex;
-      justify-content:center;
-    }
-    .wrap{width:100%;max-width:1100px}
-    header{
-      display:flex;justify-content:space-between;align-items:center;padding:14px 8px;margin-bottom:18px;
-    }
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{
-      width:56px;height:56px;border-radius:14px;
-      background:linear-gradient(135deg,var(--accent),#5eead4);
-      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;
-      box-shadow:0 8px 30px rgba(139,92,246,0.12);
-    }
-    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
-    nav a:hover{color:var(--accent)}
-    /* HERO */
-    .hero{
-      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;
-      padding:26px;border-radius:22px;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
-      box-shadow: 0 12px 40px rgba(16,24,40,0.06);border:1px solid var(--glass-border);
-    }
-    .intro h1{font-size:30px;margin-bottom:10px;color:var(--accent)}
-    .intro p{color:var(--muted);max-width:62ch}
-    .cta{margin-top:18px;display:flex;gap:12px}
-    .btn{padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none}
-    .btn.primary{background:linear-gradient(90deg,var(--accent),#6d28d9);color:white;box-shadow:0 8px 30px rgba(109,40,217,0.12)}
-    .btn.ghost{background:transparent;border:1px solid rgba(11,18,32,0.06);color:var(--muted)}
-    /* floating glass card with photo */
-    .photo-card{
-      width:360px;border-radius:18px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.72));
-      border:1px solid var(--glass-border);box-shadow:0 18px 50px rgba(16,24,40,0.08);
-      display:flex;flex-direction:column;align-items:center;gap:12px;position:relative;overflow:visible;
-      transform-origin:center center;
-      transition:transform .35s cubic-bezier(.2,.9,.2,1),box-shadow .35s;
-    }
-    .photo-card:hover{transform:translateY(-8px) rotate(-0.5deg);box-shadow:0 30px 80px rgba(16,24,40,0.12)}
-    .photo-wrap{
-      width:220px;height:220px;border-radius:20px;overflow:hidden;border:6px solid rgba(255,255,255,0.85);
-      box-shadow:0 10px 30px rgba(13,18,28,0.08), inset 0 1px 0 rgba(255,255,255,0.5);
-    }
-    .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-    .photo-meta{display:flex;flex-direction:column;align-items:center}
-    .name{font-weight:700;font-size:18px;color:#0b1220}
-    .role{font-size:13px;color:var(--muted);margin-top:4px}
-    .badge{margin-top:10px;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,rgba(139,92,246,0.12),rgba(6,182,212,0.08));font-weight:700;color:#0b1220;font-size:13px}
-    /* sections */
-    section{margin-top:20px;padding:22px;border-radius:12px}
-    .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-    h2{color:var(--accent);margin:0}
-    p.lead{color:var(--muted);max-width:72ch}
-    .skills{display:flex;flex-wrap:wrap;gap:12px}
-    .skill{background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,255,255,0.78));padding:10px 14px;border-radius:12px;border:1px solid rgba(11,18,32,0.04);font-weight:700}
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:12px}
-    .proj{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));padding:16px;border-radius:12px;border:1px solid rgba(11,18,32,0.04);box-shadow:0 8px 30px rgba(16,24,40,0.04)}
-    .proj h3{margin-bottom:8px;color:var(--accent-2)}
-    .proj p{color:var(--muted);margin-bottom:10px}
-    .links{display:flex;gap:10px;flex-wrap:wrap}
-    .link-pill{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;text-decoration:none;font-weight:700}
-    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
-    /* small screens */
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr;gap:18px}
-      .photo-card{width:320px;margin:0 auto}
-    }
-    @media(max-width:520px){
-      body{padding:16px}
-      .photo-wrap{width:200px;height:200px}
-    }
-    /* subtle fade-in */
-    .fade{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
-    .fade.in{opacity:1;transform:none}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veeramadhumitha P — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">VM</div>
-        <div>
-          <div style="font-weight:700">Veeramadhumitha P</div>
-          <div style="font-size:13px;color:var(--muted)">Pre-final Year CSE Student • Flutter & Web • AI Enthusiast</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="intro fade">
-          <h1>Hello — I'm <span style="color:var(--accent)">Veeramadhumitha</span></h1>
-          <p class="lead">I build efficient, user-friendly Flutter and web applications and explore AI-driven features. I focus on clean UI, performance, and practical solutions.</p>
-          <div class="cta">
-            <a class="btn primary" href="#projects">See Projects</a>
-            <a class="btn ghost" href="#contact">Contact Me</a>
-          </div>
-        </div>
-
-        <aside class="photo-card fade" aria-label="Profile photo card">
-          <div class="photo-wrap">
-            <!-- Embedded photo (base64) -->
-            <img src="myphoto.jpg" alt="Veeramadhumitha photo" id="profile-photo"/>
-          </div>
-          <div class="photo-meta">
-            <div class="name">Veeramadhumitha P</div>
-            <div class="role">Pre-final Year CSE Student</div>
-            <div class="badge">Flutter • React • AI</div>
-          </div>
-        </aside>
-      </section>
-
-      <section id="about" class="fade">
-        <div class="section-head">
-          <h2>About</h2>
-          <div style="color:var(--muted)">Who I am</div>
-        </div>
-        <p class="lead">I’m a Computer Science student passionate about building real-world apps using Flutter, PHP, React, and AI. I enjoy solving problems through elegant UI and performant code. I frequently build side-projects to learn new stacks and explore AI integrations.</p>
-      </section>
-
-      <section id="skills" class="fade">
-        <div class="section-head">
-          <h2>Skills</h2>
-          <div style="color:var(--muted)">Tools & tech</div>
-        </div>
-        <div class="skills">
-          <div class="skill">Flutter & Dart</div>
-          <div class="skill">ReactJS</div>
-          <div class="skill">Node.js & Express</div>
-          <div class="skill">MongoDB & MySQL</div>
-          <div class="skill">HTML / CSS / JS</div>
-          <div class="skill">AI & ML Basics</div>
-        </div>
-      </section>
-
-      <section id="projects" class="fade">
-        <div class="section-head">
-          <h2>Projects</h2>
-          <div style="color:var(--muted)">Selected work</div>
-        </div>
-        <div class="projects-grid">
-          <article class="proj">
-            <h3>Electroz</h3>
-            <p>Modern e-commerce SPA built with React and Bootstrap, featuring persistent cart and smooth UI interactions.</p>
-            <div class="links"><a class="link-pill" href="https://github.com/veeramadhumitha/electroz-store" target="_blank">GitHub</a></div>
-          </article>
-
-          <article class="proj">
-            <h3>Resume Builder</h3>
-            <p>Web-based resume generator using PHP with input forms and PDF export.</p>
-            <div class="links"><a class="link-pill" href="https://github.com/veeramadhumitha/resume-builder-php" target="_blank">GitHub</a></div>
-          </article>
-
-          <article class="proj">
-            <h3>VocaLink</h3>
-            <p>Voice-to-action Flutter app that executes calls, searches, and camera actions using speech.</p>
-            <div class="links"><a class="link-pill" href="https://github.com/veeramadhumitha/vocalink" target="_blank">GitHub</a></div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="fade">
-        <div class="section-head">
-          <h2>Contact</h2>
-          <div style="color:var(--muted)">Let's connect</div>
-        </div>
-        <div style="text-align:center;margin-top:8px">
-          <a class="link-pill" href="mailto:veeramadhumitha@gmail.com">Email</a>
-          <a class="link-pill" href="https://github.com/veeramadhumitha" target="_blank">GitHub</a>
-          <a class="link-pill" href="https://www.linkedin.com/in/YOUR-ID" target="_blank">LinkedIn</a>
-        </div>
-      </section>
-
-      <footer>© <span id="year"></span> Veeramadhumitha P — All rights reserved.</footer>
-    </main>
+<header>
+  <div class="nav-container">
+    <div class="logo">VM</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
+</header>
 
-  <script>
-    // Read embedded image data URL from server-saved file and inject into img src.
-    (async () => {
-      try {
-        // attempt to fetch the saved data URL file (works in this environment)
-        const res = await fetch('/mnt/data/photo_data_url.txt');
-        if (res.ok) {
-          const dataUrl = await res.text();
-          document.getElementById('profile-photo').src = dataUrl;
-        } else {
-          // Fallback: show a pale placeholder if fetch fails
-          document.getElementById('profile-photo').src = '';
-          document.getElementById('profile-photo').style.background = 'linear-gradient(135deg,#f3f0ff,#e6fffb)';
-        }
-      } catch (e) {
-        console.warn('Could not load embedded photo file:', e);
-      }
-      // fade-in observer
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-      }, {threshold: 0.15});
-      document.querySelectorAll('.fade').forEach(el => io.observe(el));
-      document.getElementById('year').textContent = new Date().getFullYear();
-    })();
-  </script>
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Hello, I'm <span>Veeramadhumitha</span></h1>
+      <p>Pre-final Year CSE Student — Web & App Developer. I build sleek, modern web and mobile applications with interactive features.</p>
+      <a href="#projects" class="btn-primary">See Projects</a>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <!-- Add profile photo here -->
+        <img src="" alt="Profile Photo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section fade-up">
+  <h2>About Me</h2>
+  <p>I'm Veeramadhumitha P, a computer science student passionate about creating modern web and mobile apps. I enjoy exploring new technologies, integrating AI features, and designing elegant interfaces with smooth interactions.</p>
+</section>
+
+<section id="skills" class="section section-light fade-up">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Java</div>
+    <div class="skill">MERN Stack</div>
+    <div class="skill">MongoDB</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Teamwork</div>
+    <div class="skill">Time Management</div>
+    <div class="skill">Calm & Professional</div>
+  </div>
+</section>
+
+<section id="projects" class="section fade-up">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Electroz</h3>
+      <p>Modern electronic e-commerce platform with smooth checkout and dynamic catalog. Built with React & Bootstrap.</p>
+      <a href="https://github.com/veeramadhumitha/electroz-store" class="project-link" target="_blank">GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>Resume Builder</h3>
+      <p>Web-based resume generator using PHP. Export professional resumes in PDF format.</p>
+      <a href="https://github.com/veeramadhumitha/resume-builder-php" class="project-link" target="_blank">GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>VocaLink</h3>
+      <p>Voice-to-action Flutter app for Android. Executes calls, searches, and camera actions via speech commands.</p>
+      <a href="https://github.com/veeramadhumitha/vocalink" class="project-link" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Veeramadhumitha P — All rights reserved.</p>
+</footer>
+
+<script>
+// Fade in sections on scroll
+const faders = document.querySelectorAll('.fade-up');
+const appearOptions = { threshold: 0.2 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('appear');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => appearOnScroll.observe(fader));
+
+// Skills appear individually
+const skills = document.querySelectorAll('.skill');
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      skills.forEach((skill, i) => {
+        setTimeout(() => skill.classList.add('appear'), i * 100);
+      });
+    }
+  });
+},{ threshold: 0.3 });
+
+skillObserver.observe(document.getElementById('skills'));
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* ---------- GLOBAL ---------- */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Lexend',sans-serif; }
+    body { background:#f5f7fa; color:#333; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+    /* ---------- NAVIGATION ---------- */
+    nav { display:flex; justify-content:space-between; align-items:center; padding:20px 0; background:linear-gradient(90deg,#5A57FF,#00C6FF); border-radius:0 0 20px 20px; color:#fff; }
+    nav h1 { font-size:1.8rem; font-weight:700; }
+    nav ul { display:flex; gap:25px; list-style:none; }
+    nav ul li a { font-weight:500; transition:all 0.3s ease; }
+    nav ul li a:hover { transform:scale(1.1); }
+
+    /* ---------- HEADER ---------- */
+    header.cert-header {
+      text-align:center;
+      padding:100px 20px 50px;
+      background:linear-gradient(135deg,#a8edea,#fed6e3);
+      border-bottom-left-radius:50px;
+      border-bottom-right-radius:50px;
+    }
+    header.cert-header h1 { font-size:3rem; color:#5A57FF; margin-bottom:15px; }
+    header.cert-header p { font-size:1.15rem; color:#555; }
+
+    /* ---------- CERTIFICATION GRID ---------- */
+    .cert-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+      padding:60px 0;
+    }
+
+    .cert-card {
+      background:#fff;
+      border-radius:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      overflow:hidden;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      text-align:center;
+      padding-bottom:20px;
+      opacity:0;
+      transform: translateY(50px) scale(0.95);
+      animation: fadeUp 0.8s forwards;
+    }
+
+    .cert-card img {
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .cert-card:hover img {
+      transform: scale(1.05) rotate(-1deg);
+      filter: brightness(1.1);
+    }
+
+    .cert-card h3 {
+      margin:15px 0 10px;
+      color:#5A57FF;
+      font-weight:600;
+    }
+
+    .cert-card p {
+      font-size:0.95rem;
+      color:#555;
+      margin-bottom:10px;
+      padding:0 15px;
+    }
+
+    .cert-card a {
+      display:inline-block;
+      margin:8px;
+      padding:8px 20px;
+      border-radius:50px;
+      font-weight:500;
+      background:linear-gradient(90deg,#5A57FF,#00C6FF);
+      color:#fff;
+      transition:all 0.3s ease;
+    }
+    .cert-card a:hover {
+      transform: scale(1.05);
+      box-shadow:0 8px 20px rgba(90,87,255,0.4);
+    }
+
+    @keyframes fadeUp {
+      0% { opacity:0; transform: translateY(50px) scale(0.95); }
+      100% { opacity:1; transform: translateY(0) scale(1); }
+    }
+
+    /* staggered animation for 6 cards */
+    .cert-card:nth-child(1){ animation-delay:0.1s; }
+    .cert-card:nth-child(2){ animation-delay:0.25s; }
+    .cert-card:nth-child(3){ animation-delay:0.4s; }
+    .cert-card:nth-child(4){ animation-delay:0.55s; }
+    .cert-card:nth-child(5){ animation-delay:0.7s; }
+    .cert-card:nth-child(6){ animation-delay:0.85s; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:768px){
+      header.cert-header h1{ font-size:2.2rem; }
+      .cert-card img{ height:150px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="container">
+    <h1>MyPortfolio</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="cert-header">
+    <h1>Certifications</h1>
+    <p>Here are my professional certifications and achievements.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="cert-grid">
+      <!-- Certificate 1 -->
+      <div class="cert-card">
+        <img src="images/img1.jpeg" alt="Certificate 1">
+        <h3>Web Development Bootcamp</h3>
+        <p>by Udemy</p>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="cert-card">
+        <img src="images/img2.jpeg" alt="Certificate 2">
+        <h3>Frontend Development</h3>
+        <p>by udemy</p>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="cert-card">
+        <img src="images/img3.jfif" alt="Certificate 3">
+        <h3>Internship-MERNSTACK</h3>
+        <p>by App inovations</p>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="cert-card">
+        <img src="images/img 4.jfif" alt="Certificate 4">
+        <h3>Ai tools and CHATGPT workshop</h3>
+        <p>by be10X</p>
+      </div>
+
+      <!-- Certificate 5 -->
+      <div class="cert-card">
+        <img src="images/img 5.jfif" alt="Certificate 5">
+        <h3>Atos Srijan</h3>
+        <p>by unstop</p>
+      </div>
+
+      <!-- Certificate 6 -->
+      <div class="cert-card">
+        <img src="images/img 6.jpg" alt="Certificate 6">
+        <h3>Mhtechin Inovation Challenge</h3>
+        <p>by Unstop</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

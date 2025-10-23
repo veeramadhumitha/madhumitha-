@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    /* ---------- GLOBAL ---------- */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Lexend',sans-serif; }
+    body { background:#f0f4f8; color:#333; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+
+    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+    /* ---------- HEADER ---------- */
+    header.contact-header {
+      text-align:center;
+      padding:100px 20px 50px;
+      background:linear-gradient(135deg,#a8edea,#fed6e3);
+      border-bottom-left-radius:50px;
+      border-bottom-right-radius:50px;
+    }
+    header.contact-header h1 { font-size:3rem; color:#5A57FF; margin-bottom:15px; }
+    header.contact-header p { font-size:1.15rem; color:#555; }
+
+    /* ---------- CONTACT GRID ---------- */
+    .contact-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+      padding:60px 0;
+    }
+
+    /* ---------- CONTACT CARD ---------- */
+    .contact-card {
+      background: linear-gradient(145deg,#ffffff,#e6e9f0);
+      border-radius:20px;
+      box-shadow:0 15px 25px rgba(0,0,0,0.08);
+      padding:35px 25px;
+      text-align:center;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      opacity:0;
+      transform: scale(0.9) translateY(40px);
+      animation: fadeScale 0.8s forwards;
+      cursor:pointer;
+    }
+
+    .contact-card i {
+      font-size:2.5rem;
+      color:#5A57FF;
+      margin-bottom:15px;
+      transition: transform 0.4s ease, color 0.4s ease;
+    }
+
+    .contact-card h3 {
+      font-size:1.3rem;
+      font-weight:700;
+      color:#5A57FF;
+      margin-bottom:10px;
+    }
+
+    .contact-card p a {
+      color:#555;
+      transition: color 0.3s ease;
+    }
+
+    /* Hover animation */
+    .contact-card:hover {
+      transform: translateY(-10px) scale(1.05) rotateZ(-1deg);
+      box-shadow:0 25px 45px rgba(0,0,0,0.15);
+    }
+
+    .contact-card:hover i {
+      color:#00C6FF;
+      transform: scale(1.2) rotate(-5deg);
+    }
+
+    /* stagger animation */
+    .contact-card:nth-child(1) { animation-delay:0.1s; }
+    .contact-card:nth-child(2) { animation-delay:0.3s; }
+    .contact-card:nth-child(3) { animation-delay:0.5s; }
+
+    @keyframes fadeScale {
+      0% { opacity:0; transform: scale(0.9) translateY(40px); }
+      100% { opacity:1; transform: scale(1) translateY(0); }
+    }
+
+    /* ---------- CONTACT FORM ---------- */
+    .contact-form {
+      background: linear-gradient(145deg,#ffffff,#e6e9f0);
+      padding:45px 30px;
+      border-radius:25px;
+      box-shadow:0 15px 25px rgba(0,0,0,0.08);
+      max-width:600px;
+      margin:0 auto 60px auto;
+      opacity:0;
+      transform: translateY(40px) scale(0.95);
+      animation: fadeScale 0.8s forwards;
+      animation-delay:0.6s;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width:100%;
+      padding:15px 20px;
+      margin-bottom:20px;
+      border-radius:50px;
+      border:1px solid #ccc;
+      font-size:1rem;
+      outline:none;
+      transition:all 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color:#5A57FF; box-shadow:0 0 12px rgba(90,87,255,0.2); }
+
+    .contact-form button {
+      padding:12px 30px;
+      border:none;
+      border-radius:50px;
+      background:linear-gradient(90deg,#5A57FF,#00C6FF);
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow:0 12px 25px rgba(90,87,255,0.4);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:768px) {
+      header.contact-header h1 { font-size:2.2rem; }
+      .contact-form { padding:30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ---------- NAVBAR (Bootstrap only) ---------- -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="index.html">Veeramadhumitha P</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="certificates.html">Certificates</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ---------- HEADER ---------- -->
+  <header class="contact-header mt-5 pt-5">
+    <h1>Contact Me</h1>
+    <p>Connect with me via LinkedIn, GitHub or drop a message!</p>
+  </header>
+
+  <div class="container">
+
+    <!-- CONTACT INFO CARDS -->
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fab fa-linkedin"></i>
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-github"></i>
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p><a href="mailto:example@email.com">example@email.com</a></p>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
