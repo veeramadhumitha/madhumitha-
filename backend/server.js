@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -8,6 +9,7 @@ const app = express();
 
 /* ✅ JSON parser (safe) */
 app.use(express.json({ strict: false }));
+app.use(cors());
 
 /* ✅ Log every request (TEMP – helps debug) */
 app.use((req, res, next) => {
